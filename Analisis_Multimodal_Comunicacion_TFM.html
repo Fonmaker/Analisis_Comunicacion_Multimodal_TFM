@@ -188,6 +188,13 @@
   .indice ul li {
     margin-bottom: 10px;
   }
+  .indice ul ul {
+  margin-left: 15px;
+  font-size: 0.9em;
+  }
+  .indice ul ul li {
+    margin-bottom: 5px;
+  }
 
   .indice a {
     color: #fff;
@@ -227,22 +234,74 @@
 
 
 <nav class="indice">
-  <div>
-    <ul id="toc-list">
-      <li><a href="#trabajo-fin-de-máster-tfm" class="resaltado">Trabajo Fin de Máster (TFM)</a></li>
-      <li><a href="#capítulo-1-introducción">Capítulo 1 – Introducción</a></li>
-      <li><a href="#capítulo-2-marco-teórico">Capítulo 2 – Marco Teórico</a></li>
-      <li><a href="#capítulo-3-construcción-del-dataset-multimodal.">Capítulo 3 – Construcción del Dataset</a></li>
-      <li><a href="#capítulo-4-modelado">Capítulo 4 – Modelado</a></li>
-      <li><a href="#capítulo-5.-prueba-de-producción">Capítulo 5 – Producción</a></li>
-      <li><a href="#capítulo-6-conclusiones-y-líneas-futuras">Capítulo 6 – Conclusiones</a></li>
-    </ul>
-  </div>
+  <ul id="toc-list">
+    <li><a href="#trabajo-fin-de-master-tfm" class="resaltado">Trabajo Fin de Máster (TFM)</a></li>
+
+    <li class="toc-item">
+      <a href="#capitulo-1-introduccion" class="toggle">Capítulo 1 – Introducción</a>
+      <ul class="subtoc">
+        <li><a href="#justificación-y-objetivo-del-trabajo">1.1 Justificación y objetivo</a></li>
+        <li><a href="#estructura-del-trabajo">1.2 Estructura del trabajo</a></li>
+        <li><a href="#notebooks-y-documentacion-tecnica">1.3 Notebooks del proyecto y documentación técnica</a></li>
+      </ul>
+    </li>
+
+    <li class="toc-item">
+      <a href="#capitulo-2-marco-teorico" class="toggle">Capítulo 2 – Marco Teórico</a>
+      <ul class="subtoc">
+        <li><a href="#análisis-del-discurso-oral">2.1 Análisis del discurso oral</a></li>
+        <li><a href="#comunicación-multimodal">2.2 Comunicación multimodal</a></li>
+        <li><a href="#detección-de-emociones-en-audio-y-video">2.3 Detección de emociones</a></li>
+        <li><a href="#procesamiento-multimodal">2.4 Procesamiento de audio, texto y video</a></li>
+        <li><a href="#machine-learning-en-análisis-multimodal">2.5 Machine Learning en el análisis multimodal</a></li>
+        <li><a href="#trabajos-relacionados">2.6 Trabajos relacionados</a></li>
+      </ul>
+    </li>
+
+    <li class="toc-item">
+      <a href="#capítulo-3-construcción-del-dataset-multimodal" class="toggle">Capítulo 3 – Construcción del Dataset</a>
+      <ul class="subtoc">
+        <li><a href="#selección-de-vídeos-para-la-construcción-del-dataset">3.1 Selección de vídeos.</a></li>
+        <li><a href="#procesamiento-de-los-vídeos-y-construcción-del-dataset">3.2 Procesamiento de los vídeos.</a></li>
+        <li><a href="#limpieza-y-estructuración-del-dataset">3.3 Limpieza y estructuración del dataset</a></li>
+        <li><a href="#cálculo-de-características-adicionales">3.4 Cálculo de características adicionales</a></li>
+      </ul>
+    </li>
+
+    <li class="toc-item">
+      <a href="#capítulo-4-modelado" class="toggle">Capítulo 4 – Modelado</a>
+      <ul class="subtoc">
+        <li><a href="#entrenamiento-del-modelo-predictivo">4.1 Entrenamiento del modelo predictivo</a></li>
+        <li><a href="#evaluación-del-modelo">4.2 Evaluación del modelo</a></li>
+        <li><a href="#pruebas-con-vídeos-de-mayor-calidad-visual">4.3 Pruebas con vídeos de mayor calidad visual</a></li>
+        <li><a href="#explicabilidad-del-modelo-y-generación-de-feedback-personalizado">4.4 Explicabilidad del modelo</a></li>
+        <li><a href="#conclusiones-del-modelado-y-paso-a-producción">4.5 Conclusiones del modelado</a></li>
+      </ul>
+    </li>
+
+    <li class="toc-item">
+      <a href="#capítulo-5.-prueba-de-producción" class="toggle">Capítulo 5 – Prueba de Producción</a>
+      
+    </li>
+
+    <li class="toc-item">
+      <a href="#capitulo-6-conclusiones-y-lineas-futuras" class="toggle">Capítulo 6 – Conclusiones y líneas futuras</a>
+      <ul class="subtoc">
+        <li><a href="#conclusiones-generales">6.1 Conclusiones generales</a></li>
+        <li><a href="#valor-de-negocio-y-posibles-aplicaciones">6.2 Valor de negocio y posibles aplicaciones</a></li>
+        <li><a href="#ventajas-competitivas">6.3 Ventajas competitivas</a></li>
+        <li><a href="#limitaciones-y-líneas-futuras">6.4 Limitaciones y líneas futuras</a></li>
+        <li><a href="#conclusión-final">6.5 Conclusión final</a></li>
+      </ul>
+    </li>
+  </ul>
+
   <p style="font-weight: bold; font-size: 20px;">Alfonso Graña Corral</p>
 </nav>
 
+
 <div class='contenido'>
-<header id="trabajo-fin-de-máster-tfm">
+<header id="trabajo-fin-de-master-tfm">
 <h1 class="title">Trabajo Fin de Máster (TFM)</h1>
 </header>
 
@@ -252,7 +311,7 @@
 <p>Máster Data Science, Big Data &amp; Business Analytics 2024-2025</p>
 <p>Universidad Complutense de Madrid</p>
 <p>Septiembre de 2025</p>
-<h2 id="capítulo-1-introducción">Capítulo 1 – Introducción</h2>
+<h2 id="capitulo-1-introduccion">Capítulo 1 – Introducción</h2>
 <h3 id="justificación-y-objetivo-del-trabajo">1.1 Justificación y
 objetivo del trabajo</h3>
 <p>Hablar en público constituye una competencia clave en contextos
@@ -323,7 +382,7 @@ sobre los resultados obtenidos y se proponen posibles mejoras y
 aplicaciones futuras en contextos educativos, profesionales o
 personales.</p></li>
 </ul>
-<h3 id="notebooks-del-proyecto-y-documentación-técnica">1.3 Notebooks
+<h3 id="notebooks-y-documentacion-tecnica">1.3 Notebooks
 del proyecto y documentación técnica</h3>
 <p>Todo el sistema ha sido implementado como un conjunto de notebooks en
 Google Colab, trabajando directamente sobre archivos alojados en Google
@@ -383,15 +442,10 @@ Repositorio</a></strong></p></li>
 <li><p><strong>Google Drive (recomendado para archivos pesados): <a href="https://drive.google.com/drive/folders/15LFR3rK3jT_EtLpjtoeKOWTUoHEcF-1d?usp=drive_link">🔗
 Carpeta completa</a></strong></p></li>
 </ul>
-<h2 id="capítulo-2-marco-teórico">Capítulo 2 – Marco Teórico</h2>
+<h2 id="capitulo-2-marco-teorico">Capítulo 2 – Marco Teórico</h2>
 <h3 id="análisis-del-discurso-oral">2.1 Análisis del discurso oral</h3>
 <p>El discurso oral es una forma de comunicación compleja que combina el
-contenido lingüístico con elementos paralingüísticos y no verbales. A
-diferencia del lenguaje escrito, el habla se produce en tiempo real y
-está profundamente influida por el contexto, lo que exige una
-planificación estructural que favorezca la claridad y el impacto del
-mensaje. La mayoría de los discursos efectivos comparten una
-organización en tres partes: introducción, desarrollo y cierre. Además
+contenido lingüístico con elementos paralingüísticos y no verbales. Además
 del contenido, aspectos como el ritmo, las pausas y el énfasis
 desempeñan un papel clave en la atención y comprensión del oyente. Estos
 elementos, tradicionalmente estudiados desde la lingüística y la
@@ -400,9 +454,7 @@ del discurso.</p>
 <h3 id="comunicación-multimodal">2.2 Comunicación multimodal</h3>
 <p>La comunicación en contextos orales no se limita al lenguaje verbal,
 sino que integra componentes auditivos y visuales que modulan o
-refuerzan el mensaje. Este enfoque multimodal contempla la interacción
-entre lo que se dice (texto), cómo se dice (voz) y cómo se acompaña
-(gestos, posturas, expresiones faciales). Elementos como el tono de voz,
+refuerzan el mensaje. Elementos como el tono de voz,
 las pausas o la expresividad corporal influyen en la interpretación
 emocional y en la percepción de credibilidad. Por ello, un análisis
 completo del discurso debe considerar todos estos canales como parte de
@@ -419,7 +471,7 @@ visuales (microexpresiones, sonrisas) y textuales (contenido semántico).
 La combinación de estos canales —análisis multimodal— permite una
 detección más precisa y contextualizada de los estados emocionales
 presentes en un discurso.</p>
-<h3 id="procesamiento-de-audio-texto-y-video">2.4 Procesamiento de
+<h3 id="procesamiento-multimodal">2.4 Procesamiento de
 audio, texto y video</h3>
 <p>Cada canal del discurso requiere un tratamiento técnico específico.
 En audio, se emplean características como MFCC, pitch, energía o tasa de
@@ -449,7 +501,7 @@ y adaptables a escenarios reales. Este trabajo propone una aproximación
 integrada, accesible y centrada en presentaciones reales, combinando
 análisis discursivo, emocional y gestual para facilitar el
 autoaprendizaje y la mejora comunicativa.</p>
-<h2 id="capítulo-3-construcción-del-dataset-multimodal.">Capítulo 3 –
+<h2 id="capítulo-3-construcción-del-dataset-multimodal">Capítulo 3 –
 Construcción del dataset multimodal.</h2>
 <h3 id="selección-de-vídeos-para-la-construcción-del-dataset">3.1
 Selección de vídeos para la construcción del dataset</h3>
@@ -802,7 +854,7 @@ tabulares:</p>
 estructura, se eliminó la columna segmentos, tratada por separado.
 Incluye:</p></li>
 </ul>
-<blockquote>
+
 <p>video_id, link, tipo_comunicador, grupo, duracion_video,
 texto_completo, idioma.</p>
 <p>Obtenemos un total de 2.669 videos, de los cuales 1.349 son
@@ -814,7 +866,7 @@ videos.</p>
 <p>La diferencia entre los 2.669 videos que hemos analizado y los 2.770
 videos del listado inicial que pretendíamos analizar, se debe a errores
 en la descarga y análisis de estos.</p>
-</blockquote>
+
 <ul>
 <li><p><strong>b) Dataset a nivel de segmento</strong>: una fila por
 cada fragmento del discurso, reorganizando variables
@@ -1090,7 +1142,8 @@ retroalimentación personalizada al usuario.</p></li>
 <p>La salida probabilística del modelo se interpreta como un
 <strong>índice continuo de calidad comunicativa</strong>, permitiendo no
 solo clasificar, sino también ordenar y comparar discursos entre sí.</p>
-<p><strong>4.2 Evaluación del modelo (ampliación)</strong></p>
+<h3 id="evaluación-del-modelo">4.2 Evaluación del modelo</h3>
+
 <p>Durante el proceso de entrenamiento, se realizó un análisis gráfico
 de la <strong>precisión (accuracy)</strong> en función del
 <strong>número de variables seleccionadas</strong>.</p>
@@ -1142,7 +1195,7 @@ duracion_video, pmm_mean</p></li>
 </ul>
 <p><em>Contextualizan el discurso en términos de longitud y velocidad
 media del habla.</em></p>
-<p><strong>4.3 Pruebas con vídeos de mayor calidad visual</strong></p>
+<h3 id="pruebas-con-vídeos-de-mayor-calidad-visual">4.3 Pruebas con vídeos de mayor calidad visual</h3>
 <p>Con el objetivo de evaluar si una mayor calidad en la señal visual
 mejora el rendimiento del modelo, se entrenó nuevamente el Random Forest
 utilizando únicamente los vídeos que presentaban una <strong>alta
@@ -1267,8 +1320,7 @@ capaz de:</p>
 <li><p>Proporcionar una valoración continua (probabilidad tipo 1) que
 permite seguir la evolución con el tiempo.</p></li>
 </ul>
-<p><strong>4.5 Conclusiones del modelado y paso a
-producción</strong></p>
+<h3 id="conclusiones-del-modelado-y-paso-a-producción">4.5 Conclusiones del modelado y paso a producción</h3>
 <p>El proceso de modelado ha permitido desarrollar un sistema predictivo
 robusto, explicable y aplicable a contextos reales de evaluación de
 discursos. A lo largo del capítulo se han construido y evaluado
@@ -1329,7 +1381,7 @@ la predicción del modelo.</p>
 <p>La salida completa puede consultarse en el <strong>Notebook
 6_produccion.ipynb</strong>, incluido en la carpeta digital del
 proyecto.</p>
-<h2 id="capítulo-6-conclusiones-y-líneas-futuras">Capítulo 6 –
+<h2 id="capitulo-6-conclusiones-y-lineas-futuras">Capítulo 6 –
 Conclusiones y líneas futuras</h2>
 <h3 id="conclusiones-generales">6.1 Conclusiones generales</h3>
 <p>Este trabajo ha demostrado la viabilidad técnica y práctica de
@@ -1427,7 +1479,7 @@ actuar.</p></li>
 profesionales.</p></li>
 </ul>
 <h3 id="section-3"></h3>
-<h3 id="conclusión-final.">6.5 Conclusión final.</h3>
+<h3 id="conclusión-final">6.5 Conclusión final.</h3>
 <p>Este trabajo no solo demuestra que es posible analizar la calidad
 comunicativa de discursos de forma automatizada, sino que abre la puerta
 a sistemas inteligentes que <strong>no se limitan a evaluar, sino que
@@ -1438,5 +1490,51 @@ ser integrada en soluciones educativas, profesionales o corporativas,
 con un impacto directo en el desarrollo de habilidades comunicativas,
 uno de los activos más valorados en el mundo actual.</p>
 </div>
+<style>
+  html { scroll-behavior: smooth; }
+  .subtoc { display: none; margin-left: 10px; font-size: .9em; }
+  .toggle::after { content: " ▼"; font-size: .8em; }
+</style>
+
+<script>
+  // Normaliza tildes y caracteres especiales a un slug tipo pandoc
+  function slugify(str) {
+    return str
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // quita tildes
+      .toLowerCase()
+      .replace(/[^\w\- ]+/g, '')                        // quita símbolos raros
+      .replace(/\s+/g, '-')                             // espacios -> guiones
+      .replace(/\-+/g, '-');
+  }
+
+  document.querySelectorAll(".toggle").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      // 1) Plegar/desplegar la sublista
+      const sub = this.nextElementSibling;
+      if (sub && sub.classList.contains("subtoc")) {
+        sub.style.display = (sub.style.display === "block") ? "none" : "block";
+      }
+
+      // 2) Intentar navegar al ancla correspondiente
+      const raw = this.getAttribute("href");   // p.ej. "#capítulo-1-introducción"
+      if (!raw || !raw.startsWith("#")) return;
+
+      const wanted = raw.slice(1);
+      let target = document.getElementById(wanted);
+
+      // Si no existe por tildes/ASCII, intentamos versión normalizada
+      if (!target) {
+        const normalized = slugify(wanted);
+        target = document.getElementById(normalized);
+      }
+
+      if (target) {
+        e.preventDefault(); // evitamos salto brusco, y hacemos scroll suave
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, "", "#" + (target.id));
+      }
+    });
+  });
+</script>
 </body>
 </html>
