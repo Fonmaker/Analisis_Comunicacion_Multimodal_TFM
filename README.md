@@ -1,52 +1,85 @@
-# 🧠 Análisis Multimodal de la Comunicación en Video – TFM
+🧠 Análisis Multimodal de la Comunicación en Video – TFM
 
-**Repositorio oficial del Trabajo Fin de Máster (TFM):**  
-**"Análisis multimodal de la comunicación en video para evaluar la calidad comunicativa en discursos"**
+Repositorio oficial del Trabajo Fin de Máster (TFM):
+“Análisis multimodal de la comunicación en video para evaluar la calidad comunicativa en discursos”
 
-Este proyecto aborda el análisis multimodal de discursos en video, combinando texto, audio y video para evaluar la calidad comunicativa. Incluye la extracción de características, procesamiento, entrenamiento de modelos, análisis interpretativo y generación de feedback.
+Este proyecto aborda el análisis automatizado de discursos en video, combinando texto, audio y video para evaluar la calidad comunicativa. Incluye la extracción de características multimodales, su procesamiento, el entrenamiento de modelos explicables, análisis interpretativo y la generación de feedback estructurado para el orador.
 
----
+📍 Todo el desarrollo se ha realizado en Google Colab, trabajando directamente sobre archivos alojados en Google Drive para facilitar la gestión, ejecución distribuida por grupos de vídeos y la interoperabilidad con los recursos de almacenamiento en la nube.
 
-## 📁 Archivos grandes alojados externamente
+📁 Repositorio y Archivos
 
-Debido a las restricciones de tamaño de GitHub (máximo 100 MB por archivo), los siguientes archivos no se encuentran en este repositorio. Puedes descargarlos desde los enlaces indicados:
+El proyecto se encuentra disponible en dos ubicaciones:
 
-| Archivo                     | Descripción                                  | Enlace de descarga                                                |
-|----------------------------|----------------------------------------------|-------------------------------------------------------------------|
-| `modelo_emociones_cnn.pth` | Modelo CNN entrenado con datos de RAVDESS    | [🔗 Descargar](https://drive.google.com/file/d/ID_MODELO/view?usp=sharing) |
-| `dataset_segmentado.csv`   | Dataset final con características multimodales | [🔗 Descargar](https://drive.google.com/file/d/ID_DATASET/view?usp=sharing) |
-| `video_ted_ejemplo.mp4`    | Video TED usado como muestra de evaluación    | [🔗 Descargar](https://drive.google.com/file/d/ID_VIDEO/view?usp=sharing) |
+GitHub: 🔗 Repositorio
 
-📌 **Ubicación esperada de los archivos:**
-│
-├── models/
-│ └── modelo_emociones_cnn.pth
-├── data/
-│ └── dataset_segmentado.csv
-├── videos/
-│ └── video_ted_ejemplo.mp4
+Google Drive (recomendado para archivos pesados): 🔗 Carpeta completa
 
-Este proyecto utiliza el **Ryerson Audio-Visual Database of Emotional Speech and Song (RAVDESS)** para entrenar y validar modelos de reconocimiento de emociones a partir de audio.
+⚠️ Archivos grandes disponibles solo en Google Drive
 
-- Dataset original disponible en Zenodo:  
-  🔗 https://zenodo.org/record/1188976  
-  📄 Licencia: [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+Debido a las restricciones de tamaño de GitHub (máx. 100 MB por archivo), algunos archivos están solo en Google Drive:
 
-- Versión utilizada descargada desde Kaggle (espejo no oficial):  
-  🔗 https://www.kaggle.com/datasets/uwrfkaggler/ravdess-emotional-speech-audio
+Archivo	Descripción	Enlace
+df_dummies.csv	Dataset intermedio con variables emocionales codificadas	🔗 Descargar
 
-📂 Una vez descargado, coloca los archivos `.wav` en:
+df_seg_win_med.csv	Dataset final de segmentos tras limpieza y winsorización	🔗 Descargar
 
+features_videos_ted.json	Características de los vídeos procesados en formato JSON	🔗 Descargar
+
+📌 Ubicación esperada dentro del proyecto:
+Analisis_Multimodal_Comunicacion_TFM/data/folder_path/
+
+🎙 Dataset de emociones en audio (RAVDESS)
+
+Este proyecto utiliza el dataset RAVDESS (Ryerson Audio-Visual Database of Emotional Speech and Song) para entrenar un modelo de detección de emociones acústicas.
+
+📦 Dataset original: 🔗 Zenodo
+
+📄 Licencia: CC BY-NC-SA 4.0
+
+📥 Versión alternativa: 🔗 Kaggle
+
+📂 Ubicación esperada de los archivos .wav:
 Analisis_Multimodal_Comunicacion_TFM/data/ravdess_path/
 
+🧱 Estructura del proyecto
 Analisis_Multimodal_Comunicacion_TFM/
 │
-├── notebooks/ # Notebooks para procesamiento, modelado y análisis
-├── models/ # Modelos entrenados (descargables)
+├── notebooks/
+│   ├── 1_preparacion_dataset.ipynb
+│   ├── 2_modelo_emociones_audio_ravdess.ipynb
+│   ├── 3_extraccion_datos_videos_ted.ipynb
+│   ├── 4_limpieza_estructuracion_dataset_final.ipynb
+│   ├── 5_modelo.ipynb
+│   └── 6_produccion.ipynb ← Notebook para usar el sistema con nuevos vídeos
+│
+├── models/
+│   ├── deep_model.pth               ← Modelo de emociones en audio
+│   ├── scaler.pkl, label_encoder.pkl ← Archivos auxiliares para el modelo de emociones
+│   ├── randomforest_artifacts_modelo4.pkl ← Modelo 4 (seleccionado) + artefactos
+│   └── randomforest_artifacts_modelo5.pkl ← Modelo alternativo + artefactos
+│
 ├── data/
-│ ├── ravdess_path/ # Audios de RAVDESS
-│ └── dataset_segmentado.csv
-├── videos/ # Videos TED usados para evaluación
-├── scripts/ # Scripts para extracción de características y procesamiento
-├── requirements.txt # Dependencias del proyecto
-└── README.md
+│   ├── ravdess_path/     ← Audios RAVDESS usados para el modelo de emociones
+│   ├── json_path/        ← Archivos JSON por grupo de vídeos TED
+│   └── folder_path/      ← Archivos intermedios del proceso de análisis
+│
+├── utils/
+│   └── utils.py          ← Funciones auxiliares para producción en Colab
+│
+├── Analisis_Multimodal_Comunicacion_TFM.html     ← Memoria completa del TFM
+├── Presentacion_Analisis_Multimodal_Comunicacion_TFM.mp4 ← Vídeo explicativo
+├── README.md
+└── LICENSE
+
+📌 Notebooks clave
+
+2_modelo_emociones_audio_ravdess.ipynb: Entrenamiento del modelo de clasificación emocional a partir de audio.
+
+3_extraccion_datos_videos_ted.ipynb: Descarga, segmentación y análisis de vídeos TED.
+
+4_limpieza_estructuracion_dataset_final.ipynb: Procesamiento, limpieza y generación del dataset final.
+
+5_modelo.ipynb: Entrenamiento del modelo Random Forest y análisis de interpretabilidad.
+
+6_produccion.ipynb: Aplicación del modelo entrenado a nuevos vídeos, usando utils.py.
