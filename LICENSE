@@ -1,1 +1,44 @@
+MIT License (para el código fuente original del proyecto)
 
+Copyright (c) 2025 [Alfonos Graña Corral]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the “Software”), to deal
+in the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
+FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+---
+
+Licencias de terceros:
+
+Este proyecto reutiliza los siguientes recursos externos bajo sus respectivas licencias:
+
+• Dataset TED Talks (Kaggle): datos utilizados para análisis de discursos.  
+  Licencia: CC BY-NC-SA 4.0  
+  Fuente: https://www.kaggle.com/datasets/ashishjangra27/ted-talks
+
+• Dataset RAVDESS (emociones en audio):  
+  Licencia: CC BY-NC-SA 4.0  
+  Fuente: https://zenodo.org/record/1188976
+
+• Modelos preentrenados:
+  - Whisper (OpenAI): https://github.com/openai/whisper  
+  - Sentence Transformers: https://www.sbert.net  
+  - YOLOv8 (Ultralytics): https://github.com/ultralytics/ultralytics  
+
+Consulta las licencias específicas de cada herramienta o dataset en sus respectivos sitios oficiales si vas a reutilizarlos comercialmente.
+
+---
+
+⚠️ Este trabajo se ha desarrollado con fines académicos, no comerciales.
