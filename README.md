@@ -14,7 +14,7 @@ Este proyecto aborda el análisis automatizado de discursos en video, combinando
 El proyecto se encuentra disponible en dos ubicaciones:
 
 - **GitHub:** [🔗 Repositorio](https://github.com/Fonmaker/Analisis_Comunicacion_Multimodal_TFM)
-- **Google Drive (recomendado para archivos pesados):** [🔗 Carpeta completa](https://drive.google.com/drive/folders/15LFR3rK3jT_EtLpjtoeKOWTUoHEcF-1d?usp=drive_link)
+- **Google Drive (Completo):** [🔗 Carpeta completa](https://drive.google.com/drive/folders/15LFR3rK3jT_EtLpjtoeKOWTUoHEcF-1d?usp=drive_link)
 
 ---
 
