@@ -568,7 +568,7 @@ calidad.</p></li>
 entrenamiento.</p></li>
 </ul>
 <p>Los cálculos técnicos de esta estrategia se detallan en el
-<strong>Notebook 1_seleccion_videos_conjunto_de_datos</strong>.</p>
+<strong>Notebook 1_seleccion_videos_conjunto_de_datos.ipynb</strong>.</p>
 <p>Creamos así el archivo “videos_analisis_csv” que con tiene 2770 datos
 de videos con el campo &quot;categoria&quot; 0 y 1 que posteriormente se
 utilizarán para el entrenamiento del modelo y renombrando el campo como
@@ -597,8 +597,7 @@ con alineación temporal precisa.</p></li>
 <li><p><strong>Extracción de características acústicas</strong> con
 librosa y torchaudio.</p></li>
 <li><p><strong>Análisis visual</strong> a partir de fotogramas centrales
-de cada segmento, usando cv2, YOLO y modelos ligeros de detección de
-rostro y posturas.</p></li>
+de cada segmento, usando cv2, YOLO y MediaPipe.</p></li>
 <li><p><strong>Integración multimodal</strong> Se serializan las
 variables de audio, texto y vídeo alineadas temporalmente en JSON por
 vídeo y en JSON por lote (grupo). Una vez procesados todos los lotes, se
@@ -736,8 +735,7 @@ estructurado</strong>, por vídeo y por grupo.</p></li>
 temporal precisa.</p></li>
 <li><p>librosa y torchaudio: análisis de características
 acústicas.</p></li>
-<li><p>opencv (cv2), YOLO, PoseEstimationWithMobileNet: análisis visual
-por fotograma.</p></li>
+<li><p>opencv (cv2), YOLO, MediaPipe.</p></li>
 <li><p>pandas, numpy, joblib, torch, moviepy: procesamiento y
 manipulación general de datos.</p></li>
 </ul>
@@ -1066,7 +1064,7 @@ lingüísticas, patrones heurísticos y modelos de embeddings multilingües
 (MiniLM). A partir de este proceso se extrajeron cinco variables
 clave:</p>
 <ul>
-<li><p>Número de oraciones detectadas.</p></li>
+<li><p>Claridad oraciones.</p></li>
 <li><p>Uso de palabras de impacto emocional o persuasivo.</p></li>
 <li><p>Presencia de anécdotas personales.</p></li>
 <li><p>Inclusión de ejemplos y analogías.</p></li>
@@ -1121,7 +1119,8 @@ en Python y se encuentran documentadas en el <strong>Notebook
 5_Modelo.ipynb</strong>.</p>
 <h3 id="entrenamiento-del-modelo-predictivo">4.1 Entrenamiento del
 modelo predictivo</h3>
-<p>Para el entrenamiento se utilizó el dataset df_model.csv, con una
+<p>Para el entrenamiento se utilizó el dataset df_model.csv, 
+  integrado por 1.852 filas y 118 columnas, con una
 fila por vídeo y variables que resumen el comportamiento multimodal del
 orador. El objetivo del modelo es predecir la variable tipo_comunicador
 (0 = baja calidad, 1 = alta calidad), y utilizar la probabilidad de
@@ -1362,7 +1361,7 @@ individuales de forma autónoma. Este cuaderno utiliza funciones
 definidas en el módulo auxiliar <strong>utils.py</strong> y permite
 procesar vídeos tanto desde una <strong>URL</strong> (por ejemplo, de
 YouTube) como desde el <strong>almacenamiento local del
-usuario</strong>.</p>
+usuario</strong>, generando una predicción y un feedback, ayudandose de shap y un diccionario de frases por variable.</p>
 <p>El objetivo de esta prueba es facilitar el uso práctico del sistema y
 comprobar su capacidad para <strong>extraer características</strong>,
 <strong>aplicar el modelo entrenado</strong> y <strong>generar
