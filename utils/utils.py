@@ -1123,21 +1123,42 @@ def probabilidades(df_video,df_calculos_agregados_video, model_path):
     print(categoria)
 
 
+  
     # -----------------------------
     # 4) Obtener SHAP local (robusto a formas)
     # -----------------------------
-    def compute_shap_for_one(explainer, x_df):
+    import shap
+
+    def compute_shap_for_one(explainer, model, x_df):
         """
-        Devuelve un objeto que puede ser shap.Explanation o array/list,
-        dependiendo de la versión/Explainer.
+        Calcula SHAP de forma compatible con explainer clásico o moderno.
+        Si falla o devuelve valores vacíos, recrea TreeExplainer.
         """
         try:
-            return explainer(x_df)  # API moderna suele devolver Explanation
-        except Exception:
-            # Fallback a .shap_values clásico
-            return explainer.shap_values(x_df)
+            if hasattr(explainer, "shap_values"):
+                sv = explainer.shap_values(x_df)
+            else:
+                sv = explainer(x_df)
+        except Exception as e:
+            print("⚠️ Error en explainer original:", e)
+            sv = None
 
-    sv = compute_shap_for_one(explainer, x_sample)
+        # Si viene vacío o escalar
+        arr = np.asarray(getattr(sv, "values", sv))
+        if arr is None or arr.shape == ():
+            print("⚠️ SHAP vacío o escalar, regenerando TreeExplainer...")
+            try:
+                new_explainer = shap.TreeExplainer(model)
+                sv = new_explainer.shap_values(x_df)
+            except Exception as e2:
+                print("❌ Falla incluso con TreeExplainer:", e2)
+                sv = np.zeros((1, x_df.shape[1]))  # fallback neutro
+        return sv
+
+    sv = compute_shap_for_one(explainer, model_artifacts, x_sample)
+
+
+    
 
     def to_1d_for_class(sv_obj, features, classes, class_choice, pred_class):
         """
