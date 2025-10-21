@@ -82,7 +82,7 @@ Analisis_Multimodal_Comunicacion_TFM/
 
 Si prefieres una explicación visual del funcionamiento y los objetivos del TFM, puedes ver el video explicativo, disponible tanto en este repositorio como en el siguiente enlace de YouTube:
 
-🔗 [Ver en YouTube](https://youtu.be/oZZ5XCOF4bI)
+🔗 [Ver en YouTube](https://youtu.be/kRusKsHG1uc)
 
 ---
 
