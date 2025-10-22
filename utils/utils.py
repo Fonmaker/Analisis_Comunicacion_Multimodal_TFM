@@ -1371,10 +1371,11 @@ def probabilidades(df_video,df_calculos_agregados_video, model_path):
     fig, ax = plt.subplots(figsize=(10, 6))
     bars = ax.barh(groups, values, color=colors)
     ax.axvline(0, color='black', linewidth=1)
-    ax.set_title(f"Contribución por grupo a la predicción (fila {i} / clase {'predicha' if CLASS_CHOICE=='predicted' else 'positiva'})")
+    ax.set_title(f"Contribución por grupo a nivel de comumunicador")
     ax.set_xlabel("Contribución SHAP (en probabilidad)")
     plt.grid(True, axis='x')
-
+     # 🔹 Dejar margen a izquierda y derecha
+    ax.set_xlim(min(values) - 0.015, max(values) + 0.015)
     for bar in bars:
         w = bar.get_width()
         ax.text(w + (0.001 if w >= 0 else -0.001),
@@ -1429,11 +1430,12 @@ def probabilidades(df_video,df_calculos_agregados_video, model_path):
             fig, ax = plt.subplots(figsize=(10, max(4, len(nombres)*0.4)))
             bars = ax.barh(nombres, shap_vals, color=["#5DADE2" if v >= 0 else "#E74C3C" for v in shap_vals])
             ax.axvline(0, color='black', linewidth=1)
-            ax.set_title(f"Contribución SHAP individual — Grupo: {grupo} (fila {i})")
+            ax.set_title(f"Contribución SHAP individual — Grupo: {grupo}")
             ax.set_xlabel("Contribución SHAP (en probabilidad)")
             ax.invert_yaxis()
             plt.grid(True, axis='x', linestyle='--', alpha=0.5)
-
+             # 🔹 Dejar margen a izquierda y derecha
+            ax.set_xlim(min(shap_vals) - 0.015, max(shap_vals) + 0.015)
             for bar, val in zip(bars, shap_vals):
                 w = bar.get_width()
                 ax.text(w + (0.001 if w >= 0 else -0.001),
